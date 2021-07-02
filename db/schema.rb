@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_30_170204) do
+ActiveRecord::Schema.define(version: 2021_07_02_181658) do
+
+  create_table "animals", force: :cascade do |t|
+    t.string "nome_do_animal"
+    t.string "raca"
+    t.string "especie"
+    t.string "sexo"
+    t.string "peso"
+    t.string "data_de_nascimento"
+    t.string "situacao"
+    t.string "ong_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ong_id"], name: "index_animals_on_ong_id"
+  end
 
   create_table "ongs", force: :cascade do |t|
     t.string "nome"
